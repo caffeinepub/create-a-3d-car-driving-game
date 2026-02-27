@@ -1,0 +1,170 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebuild as Reel/Short-Video App",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Replace 3D car game with vertical full-screen reel feed",
+      "acceptanceCriteria": [
+        "The car game UI and 3D canvas are removed.",
+        "The main screen shows a vertical full-screen feed of reel/content cards.",
+        "Users can scroll or swipe to advance to the next reel.",
+        "Only one reel is visible/active at a time (full-screen per item).",
+        "The layout is responsive and works on a typical laptop browser."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace CarGame component render with ReelFeed component, maintaining full-screen container layout"
+        },
+        {
+          "path": "frontend/src/components/ReelFeed.tsx",
+          "operation": "create",
+          "description": "Create vertical scrollable feed container that renders ReelCard components one at a time in full-screen viewport, implements snap-scroll behavior for one-reel-at-a-time display"
+        },
+        {
+          "path": "frontend/src/game/CarGame.tsx",
+          "operation": "delete",
+          "description": "Remove 3D car game main controller and R3F Canvas"
+        },
+        {
+          "path": "frontend/src/game/Car.tsx",
+          "operation": "delete",
+          "description": "Remove Three.js car model component"
+        },
+        {
+          "path": "frontend/src/game/Environment.tsx",
+          "operation": "delete",
+          "description": "Remove 3D environment scene elements"
+        },
+        {
+          "path": "frontend/src/game/GameState.ts",
+          "operation": "delete",
+          "description": "Remove game state types and initial values"
+        },
+        {
+          "path": "frontend/src/game/HUDOverlay.tsx",
+          "operation": "delete",
+          "description": "Remove speed and controls UI overlay"
+        },
+        {
+          "path": "frontend/src/game/MenuOverlay.tsx",
+          "operation": "delete",
+          "description": "Remove start and pause menu overlays"
+        },
+        {
+          "path": "frontend/src/game/physics.ts",
+          "operation": "delete",
+          "description": "Remove car physics configuration and logic"
+        },
+        {
+          "path": "frontend/src/game/useFollowCamera.ts",
+          "operation": "delete",
+          "description": "Remove camera follow hook"
+        },
+        {
+          "path": "frontend/src/game/useKeyboardControls.ts",
+          "operation": "delete",
+          "description": "Remove keyboard input handling hook"
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Display reel cards with video, metadata, and interaction icons",
+      "acceptanceCriteria": [
+        "Each reel card shows a full-screen background video or looping placeholder.",
+        "Title and description text are overlaid on the card.",
+        "Username/author label is visible on each card.",
+        "Like, comment, and share action icons appear on the right side of the card.",
+        "Action icons are clearly visible against the video/card background."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ReelCard.tsx",
+          "operation": "create",
+          "description": "Create full-screen reel card component displaying looping video background, overlaid title/description text at bottom-left, author label near bottom, and like/comment/share action icons aligned vertically on right side with appropriate contrast/shadow for visibility"
+        },
+        {
+          "path": "frontend/src/components/ActionIcons.tsx",
+          "operation": "create",
+          "description": "Create vertical action icon set component with like, comment, and share buttons styled as icon buttons with counts, positioned for right-side overlay with clear visibility"
+        },
+        {
+          "path": "frontend/src/types/reel.ts",
+          "operation": "create",
+          "description": "Define TypeScript interface for Reel data structure including id, title, description, author, videoUrl, and interaction counts"
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add top navigation with logo/tabs and apply dark theme with vibrant non-blue/purple accents",
+      "acceptanceCriteria": [
+        "A top navigation bar is present with the app name or logo.",
+        "At least two tab options (e.g., 'For You', 'Following') are shown in the nav.",
+        "A dark background theme is applied globally.",
+        "Accent color is not blue or purple.",
+        "Typography is bold and consistent across all screens.",
+        "Theme is applied consistently to nav, cards, and overlays."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TopNav.tsx",
+          "operation": "create",
+          "description": "Create top navigation bar component displaying the app logo from frontend/public/assets/generated/reel-logo.dim_400x100.png and tab navigation with 'For You' and 'Following' options, styled with dark background and consistent bold typography"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add TopNav component above ReelFeed in the layout structure"
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Replace racing-themed color variables with dark background theme and vibrant accent colors (e.g., orange, red, or green—not blue/purple), update typography to bold font weights, ensure consistent dark mode styling across all components"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update theme configuration to support dark background, vibrant non-blue/purple accent color palette, and bold typography settings that align with modern short-video aesthetic"
+        },
+        {
+          "path": "frontend/public/assets/generated/reel-logo.dim_400x100.png",
+          "operation": "create",
+          "description": "Wire the generated bold wordmark logo image (frontend/public/assets/generated/reel-logo.dim_400x100.png) as a static asset for use in TopNav component"
+        },
+        {
+          "path": "frontend/public/assets/generated/reel-icon.dim_64x64.png",
+          "operation": "create",
+          "description": "Wire the generated reel icon image (frontend/public/assets/generated/reel-icon.dim_64x64.png) as a static asset for optional use in navigation or overlays"
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Seed feed with 5 mock reel items as static frontend data",
+      "acceptanceCriteria": [
+        "At least 5 mock reel items are defined as static data.",
+        "Each item has a unique id, title, description, and author name.",
+        "Each item renders a looping video or animated visual as its background.",
+        "The feed renders all mock items in sequence.",
+        "No backend calls are made to fetch reel data."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/mockReels.ts",
+          "operation": "create",
+          "description": "Define array of at least 5 mock reel objects with unique id, title, description, author name, and videoUrl (using placeholder looping videos from public CDN or colored gradient loops), exported as static data"
+        },
+        {
+          "path": "frontend/src/components/ReelFeed.tsx",
+          "operation": "modify",
+          "description": "Import mockReels data and map over it to render ReelCard components in vertical scrollable feed, ensure all 5+ items display in sequence without backend calls"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "frontend/src/index.css": "Global dark-theme styles using OKLCH color tokens with orange-red accent, Inter/Syne fonts, scrollbar-hide utility, and forced dark color scheme.",
+  "frontend/tailwind.config.js": "Tailwind config with OKLCH-based dark color palette, Inter/Syne font families, custom border radii, orange glow shadows, and fade/slide animations.",
+  "frontend/src/App.tsx": "Root app component rendering TopNav and ReelFeed in a full-screen dark layout with a subtle footer attribution link.",
+  "frontend/src/game/GameState.ts": "Type definitions and initial state for game status (menu/playing/paused) and car state (position, rotation, velocity, speed).",
+  "frontend/src/game/physics.ts": "Arcade-style car physics engine with acceleration, braking, drag, steering sensitivity, and ground constraint logic.",
+  "frontend/src/game/useKeyboardControls.ts": "Custom React hook that tracks keyboard input state for WASD/Arrow keys and pause controls with proper cleanup.",
+  "frontend/src/game/useFollowCamera.ts": "Custom React hook that implements smooth third-person camera following with lerp-based position and look-at interpolation.",
+  "frontend/src/game/Car.tsx": "3D car component built with Three.js primitives (body, cabin, windshield, wheels, headlights) using red racing theme.",
+  "frontend/src/game/Environment.tsx": "3D racing environment with ground plane, circular track markings, barrier cones, and optimized lighting setup with shadows.",
+  "frontend/src/game/HUDOverlay.tsx": "In-game heads-up display showing speedometer with icon, current speed, and keyboard controls reference panel.",
+  "frontend/src/game/MenuOverlay.tsx": "Game menu system with start screen, pause overlay, and action buttons (start, resume, restart) using generated logo asset.",
+  "frontend/src/game/CarGame.tsx": "Main game orchestrator that manages Canvas setup, game loop, state updates, physics integration, and UI overlay coordination.",
+  "frontend/src/types/reel.ts": "TypeScript interface defining the Reel data structure with id, title, description, author, authorHandle, videoUrl, interaction counts, and tags.",
+  "frontend/src/data/mockReels.ts": "Static array of 6 mock reel objects with unique metadata, Pexels video URLs, and interaction counts for seeding the feed without backend calls.",
+  "frontend/src/components/ActionIcons.tsx": "Vertical action icon set (like, comment, share, save) with local toggle state, count formatting, and accent-colored active states.",
+  "frontend/src/components/ReelCard.tsx": "Full-screen reel card with looping video background, gradient fallback, play/pause/mute controls, overlaid author info, title/description, tags, and right-side action icons.",
+  "frontend/src/components/ReelFeed.tsx": "Vertical snap-scroll feed container that maps mockReels to ReelCard components, tracks active index via scroll events, and passes isActive prop for video autoplay control.",
+  "frontend/src/components/TopNav.tsx": "Top navigation bar with logo image, three tab buttons (Following, For You, Explore) with orange accent active state, and search/create action buttons."
+}

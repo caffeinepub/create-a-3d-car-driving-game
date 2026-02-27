@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark reel theme - OKLCH */
+    --background: oklch(0.08 0.005 260);
+    --foreground: oklch(0.97 0.005 260);
+
+    --card: oklch(0.12 0.008 260);
+    --card-foreground: oklch(0.97 0.005 260);
+
+    --popover: oklch(0.10 0.006 260);
+    --popover-foreground: oklch(0.97 0.005 260);
+
+    /* Vibrant orange-red accent */
+    --primary: oklch(0.65 0.22 30);
+    --primary-foreground: oklch(0.99 0.005 30);
+
+    --secondary: oklch(0.18 0.008 260);
+    --secondary-foreground: oklch(0.90 0.005 260);
+
+    --muted: oklch(0.20 0.008 260);
+    --muted-foreground: oklch(0.55 0.010 260);
+
+    --accent: oklch(0.65 0.22 30);
+    --accent-foreground: oklch(0.99 0.005 30);
+
+    --destructive: oklch(0.55 0.22 15);
+    --destructive-foreground: oklch(0.99 0.005 15);
+
+    --border: oklch(0.22 0.008 260);
+    --input: oklch(0.18 0.008 260);
+    --ring: oklch(0.65 0.22 30);
+
+    --radius: 0.75rem;
+
+    /* App-specific */
+    --reel-bg: oklch(0.06 0.005 260);
+    --reel-overlay: oklch(0.0 0.0 0 / 0.6);
+  }
+
+  /* Force dark mode always for this app */
+  .dark,
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    @apply bg-reel-bg text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', 'Inter', sans-serif;
+    font-weight: 800;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

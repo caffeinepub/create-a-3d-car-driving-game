@@ -1,0 +1,93 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-replace-the-current-3d-car-game-frontend-entirely-with-a-reel-style-short-video-content-feed-app-the-app-should-display-a-vertical-full-screen-scrollable-feed-of-video-or-content-cards-reels-where-users-can-swipe-or-scroll-through-individual-items-one-at-a-time-similar-to-a-social-short-video-experience",
+      "featureTitle": "Replace the current 3D car game frontend entirely with a reel-style short video/content feed app. The app should display a vertical, full-screen scrollable feed of video or content cards (reels), where users can swipe or scroll through individual items one at a time, similar to a social short-video experience.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ReelFeed.tsx",
+        "frontend/src/game/Car.tsx",
+        "frontend/src/game/CarGame.tsx",
+        "frontend/src/game/Environment.tsx",
+        "frontend/src/game/GameState.ts",
+        "frontend/src/game/HUDOverlay.tsx",
+        "frontend/src/game/MenuOverlay.tsx",
+        "frontend/src/game/physics.ts",
+        "frontend/src/game/useFollowCamera.ts",
+        "frontend/src/game/useKeyboardControls.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-each-reel-card-should-display-a-placeholder-video-or-looping-animation-a-title-a-short-description-a-username-author-label-and-interaction-icons-like-comment-share-aligned-to-the-right-side-of-the-card-in-the-style-of-a-standard-reel-ui",
+      "featureTitle": "Each reel card should display a placeholder video or looping animation, a title, a short description, a username/author label, and interaction icons (like, comment, share) aligned to the right side of the card in the style of a standard reel UI.",
+      "files": [
+        "frontend/src/components/ActionIcons.tsx",
+        "frontend/src/components/ReelCard.tsx",
+        "frontend/src/types/reel.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-minimal-top-navigation-bar-with-the-app-name-logo-and-optional-tab-navigation-e-g-for-you-following-apply-a-coherent-visual-theme-with-a-dark-background-bold-typography-and-vibrant-accent-colors-avoid-blue-purple-as-the-primary-palette-that-fits-a-modern-short-video-reel-aesthetic-consistently-across-all-screens",
+      "featureTitle": "Add a minimal top navigation bar with the app name/logo and optional tab navigation (e.g., 'For You', 'Following'). Apply a coherent visual theme with a dark background, bold typography, and vibrant accent colors (avoid blue/purple as the primary palette) that fits a modern short-video/reel aesthetic consistently across all screens.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TopNav.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-seed-the-feed-with-at-least-5-mock-reel-items-stored-as-static-data-in-the-frontend-no-backend-persistence-required-each-mock-reel-must-include-a-unique-id-title-description-author-name-and-a-placeholder-looping-video-or-animated-visual-e-g-a-colored-gradient-loop-or-a-short-looping-clip-from-a-public-cdn",
+      "featureTitle": "Seed the feed with at least 5 mock reel items stored as static data in the frontend (no backend persistence required). Each mock reel must include a unique id, title, description, author name, and a placeholder looping video or animated visual (e.g., a colored gradient loop or a short looping clip from a public CDN).",
+      "files": [
+        "frontend/src/components/ReelFeed.tsx",
+        "frontend/src/data/mockReels.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T17:54:21.359Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 5,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Replace the current 3D car game frontend entirely with a reel-style short video/content feed app. The app should display a vertical, full-screen scrollable feed of video or content cards (reels), where users can swipe or scroll through individual items one at a time, similar to a social short-video experience.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/ReelFeed.tsx",
+          "frontend/src/game/CarGame.tsx",
+          "frontend/src/game/Car.tsx",
+          "frontend/src/game/Environment.tsx",
+          "frontend/src/game/GameState.ts",
+          "frontend/src/game/HUDOverlay.tsx",
+          "frontend/src/game/MenuOverlay.tsx",
+          "frontend/src/game/physics.ts",
+          "frontend/src/game/useFollowCamera.ts",
+          "frontend/src/game/useKeyboardControls.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/ReelFeed.tsx",
+          "frontend/src/game/CarGame.tsx",
+          "frontend/src/game/Car.tsx",
+          "frontend/src/game/Environment.tsx",
+          "frontend/src/game/GameState.ts",
+          "frontend/src/game/HUDOverlay.tsx",
+          "frontend/src/game/MenuOverlay.tsx",
+          "frontend/src/game/physics.ts",
+          "frontend/src/game/useFollowCamera.ts",
+          "frontend/src/game/useKeyboardControls.ts"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Each reel card should display a placeholder video or looping animation, a title, a short description, a username/author label, and interaction icons (like, comment, share) aligned to the right side of the card in the style of a standard reel UI.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ReelCard.tsx",
+          "frontend/src/components/ActionIcons.tsx",
+          "frontend/src/types/reel.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ReelCard.tsx",
+          "frontend/src/components/ActionIcons.tsx",
+          "frontend/src/types/reel.ts"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Add a minimal top navigation bar with the app name/logo and optional tab navigation (e.g., 'For You', 'Following'). Apply a coherent visual theme with a dark background, bold typography, and vibrant accent colors (avoid blue/purple as the primary palette) that fits a modern short-video/reel aesthetic consistently across all screens.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TopNav.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/public/assets/generated/reel-logo.dim_400x100.png",
+          "frontend/public/assets/generated/reel-icon.dim_64x64.png"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TopNav.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/public/assets/generated/reel-logo.dim_400x100.png",
+          "frontend/public/assets/generated/reel-icon.dim_64x64.png"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Seed the feed with at least 5 mock reel items stored as static data in the frontend (no backend persistence required). Each mock reel must include a unique id, title, description, author name, and a placeholder looping video or animated visual (e.g., a colored gradient loop or a short looping clip from a public CDN).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/data/mockReels.ts",
+          "frontend/src/components/ReelFeed.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/data/mockReels.ts",
+          "frontend/src/components/ReelFeed.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Clear out the existing Motoko backend actor so it is a clean placeholder with no car game logic, ready for future reel-app features.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/reel-icon.dim_64x64.png",
+    "frontend/public/assets/generated/reel-logo.dim_400x100.png",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ActionIcons.tsx",
+    "frontend/src/components/ReelCard.tsx",
+    "frontend/src/components/ReelFeed.tsx",
+    "frontend/src/components/TopNav.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/data/mockReels.ts",
+    "frontend/src/game/Car.tsx",
+    "frontend/src/game/CarGame.tsx",
+    "frontend/src/game/Environment.tsx",
+    "frontend/src/game/GameState.ts",
+    "frontend/src/game/HUDOverlay.tsx",
+    "frontend/src/game/MenuOverlay.tsx",
+    "frontend/src/game/physics.ts",
+    "frontend/src/game/useFollowCamera.ts",
+    "frontend/src/game/useKeyboardControls.ts",
+    "frontend/src/index.css",
+    "frontend/src/types/reel.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

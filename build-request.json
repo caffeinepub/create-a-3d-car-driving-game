@@ -1,0 +1,125 @@
+{
+  "kind": "build_request",
+  "title": "Rebuild as Reel/Short-Video App",
+  "projectName": "Reel Stream",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Replace the current 3D car game frontend entirely with a reel-style short video/content feed app. The app should display a vertical, full-screen scrollable feed of video or content cards (reels), where users can swipe or scroll through individual items one at a time, similar to a social short-video experience.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Reel type app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The car game UI and 3D canvas are removed.",
+        "The main screen shows a vertical full-screen feed of reel/content cards.",
+        "Users can scroll or swipe to advance to the next reel.",
+        "Only one reel is visible/active at a time (full-screen per item).",
+        "The layout is responsive and works on a typical laptop browser."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Each reel card should display a placeholder video or looping animation, a title, a short description, a username/author label, and interaction icons (like, comment, share) aligned to the right side of the card in the style of a standard reel UI.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Reel type app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each reel card shows a full-screen background video or looping placeholder.",
+        "Title and description text are overlaid on the card.",
+        "Username/author label is visible on each card.",
+        "Like, comment, and share action icons appear on the right side of the card.",
+        "Action icons are clearly visible against the video/card background."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add a minimal top navigation bar with the app name/logo and optional tab navigation (e.g., 'For You', 'Following'). Apply a coherent visual theme with a dark background, bold typography, and vibrant accent colors (avoid blue/purple as the primary palette) that fits a modern short-video/reel aesthetic consistently across all screens.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Reel type app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A top navigation bar is present with the app name or logo.",
+        "At least two tab options (e.g., 'For You', 'Following') are shown in the nav.",
+        "A dark background theme is applied globally.",
+        "Accent color is not blue or purple.",
+        "Typography is bold and consistent across all screens.",
+        "Theme is applied consistently to nav, cards, and overlays."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Seed the feed with at least 5 mock reel items stored as static data in the frontend (no backend persistence required). Each mock reel must include a unique id, title, description, author name, and a placeholder looping video or animated visual (e.g., a colored gradient loop or a short looping clip from a public CDN).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Reel type app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 5 mock reel items are defined as static data.",
+        "Each item has a unique id, title, description, and author name.",
+        "Each item renders a looping video or animated visual as its background.",
+        "The feed renders all mock items in sequence.",
+        "No backend calls are made to fetch reel data."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Clear out the existing Motoko backend actor so it is a clean placeholder with no car game logic, ready for future reel-app features.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Reel type app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "backend/main.mo contains only a minimal empty actor with no car game functions.",
+        "The backend compiles without errors."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "Do not route generated image assets through the backend.",
+    "Do not use blue or purple as the primary accent color."
+  ],
+  "nonGoals": [
+    "Real video upload or streaming infrastructure.",
+    "User authentication or accounts for this iteration.",
+    "Backend persistence of reels or user interactions.",
+    "Real-time features such as live comments or notifications.",
+    "Retaining any part of the 3D car game."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bold wordmark logo for a short-video reel app with a dark background and vibrant accent color, horizontal layout (reel-logo.dim_400x100.png)",
+      "Small play/reel icon for use in navigation or card overlays, minimal flat style on transparent background (reel-icon.dim_64x64.png)"
+    ],
+    "edits": []
+  }
+}

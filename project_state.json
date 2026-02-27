@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a reel/spool-type app.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Bold wordmark logo for a short-video reel app with a dark background and vibrant accent color, horizontal layout (reel-logo.dim_400x100.png)\n- Small play/reel icon for use in navigation or card overlays, minimal flat style on transparent background (reel-icon.dim_64x64.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-playable-3d-car-driving-experience-in-the-frontend-using-react-three-fiber-three-js-including-a-drivable-car-object-and-a-simple-environment-track",
+      "title": "Implement a playable 3D car driving experience in the frontend using React Three Fiber (Three.js), including a drivable car object and a simple environment/track.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-keyboard-controls-for-driving-accelerate-brake-reverse-and-left-right-steering-with-reasonable-default-key-bindings-e-g-wasd-and-arrow-keys",
+      "title": "Add keyboard controls for driving: accelerate, brake/reverse, and left/right steering, with reasonable default key bindings (e.g., WASD and Arrow keys).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-third-person-follow-camera-that-tracks-the-car-smoothly-position-and-look-at-keeping-the-car-centered-and-maintaining-a-consistent-viewing-angle",
+      "title": "Add a third-person follow camera that tracks the car smoothly (position and look-at), keeping the car centered and maintaining a consistent viewing angle.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-basic-driving-physics-suitable-for-arcade-gameplay-speed-acceleration-friction-drag-steering-sensitivity-and-prevent-the-car-from-falling-through-the-ground",
+      "title": "Implement basic driving physics suitable for arcade gameplay (speed, acceleration, friction/drag, steering sensitivity), and prevent the car from falling through the ground.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-hud-overlay-showing-at-least-current-speed-and-basic-instructions-for-controls-in-english",
+      "title": "Add a minimal HUD overlay showing at least current speed and basic instructions for controls (in English).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-game-loop-ux-with-start-restart-and-pause-resume-controls-ui-buttons-and-or-a-key-toggle",
+      "title": "Add a simple game loop UX with Start/Restart and Pause/Resume controls (UI buttons and/or a key toggle).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-apply-a-coherent-visual-theme-for-the-app-ui-colors-typography-layout-that-matches-a-racing-arcade-aesthetic-and-is-used-consistently-across-screens-overlays-avoid-blue-purple-as-the-primary-palette",
+      "title": "Choose and apply a coherent visual theme for the app UI (colors, typography, layout) that matches a racing/arcade aesthetic and is used consistently across screens/overlays (avoid blue/purple as the primary palette).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-performance-safeguards-for-the-3d-scene-reasonable-geometry-counts-lighting-shadows-settings-so-the-game-runs-smoothly-on-a-typical-laptop-browser",
+      "title": "Add basic performance safeguards for the 3D scene (reasonable geometry counts, lighting, shadows settings) so the game runs smoothly on a typical laptop browser.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-static-image-assets-for-the-game-ui-logo-title-mark-and-hud-icon-s-and-render-them-from-frontend-static-assets-do-not-route-images-through-the-backend",
+      "title": "Generate and include static image assets for the game UI (logo/title mark and HUD icon(s)) and render them from frontend static assets (do not route images through the backend).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-3d-car-game-frontend-entirely-with-a-reel-style-short-video-content-feed-app-the-app-should-display-a-vertical-full-screen-scrollable-feed-of-video-or-content-cards-reels-where-users-can-swipe-or-scroll-through-individual-items-one-at-a-time-similar-to-a-social-short-video-experience",
+      "title": "Replace the current 3D car game frontend entirely with a reel-style short video/content feed app. The app should display a vertical, full-screen scrollable feed of video or content cards (reels), where users can swipe or scroll through individual items one at a time, similar to a social short-video experience.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-each-reel-card-should-display-a-placeholder-video-or-looping-animation-a-title-a-short-description-a-username-author-label-and-interaction-icons-like-comment-share-aligned-to-the-right-side-of-the-card-in-the-style-of-a-standard-reel-ui",
+      "title": "Each reel card should display a placeholder video or looping animation, a title, a short description, a username/author label, and interaction icons (like, comment, share) aligned to the right side of the card in the style of a standard reel UI.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-top-navigation-bar-with-the-app-name-logo-and-optional-tab-navigation-e-g-for-you-following-apply-a-coherent-visual-theme-with-a-dark-background-bold-typography-and-vibrant-accent-colors-avoid-blue-purple-as-the-primary-palette-that-fits-a-modern-short-video-reel-aesthetic-consistently-across-all-screens",
+      "title": "Add a minimal top navigation bar with the app name/logo and optional tab navigation (e.g., 'For You', 'Following'). Apply a coherent visual theme with a dark background, bold typography, and vibrant accent colors (avoid blue/purple as the primary palette) that fits a modern short-video/reel aesthetic consistently across all screens.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-seed-the-feed-with-at-least-5-mock-reel-items-stored-as-static-data-in-the-frontend-no-backend-persistence-required-each-mock-reel-must-include-a-unique-id-title-description-author-name-and-a-placeholder-looping-video-or-animated-visual-e-g-a-colored-gradient-loop-or-a-short-looping-clip-from-a-public-cdn",
+      "title": "Seed the feed with at least 5 mock reel items stored as static data in the frontend (no backend persistence required). Each mock reel must include a unique id, title, description, author name, and a placeholder looping video or animated visual (e.g., a colored gradient loop or a short looping clip from a public CDN).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-5",
+      "summary": "Clear out the existing Motoko backend actor so it is a clean placeholder with no car game logic, ready for future reel-app features.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Create a 3D Car Driving Game",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
